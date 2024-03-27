@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+# see the run_tests.sh script
+export ARMAWRAP_INCLUDE_DIR=$FSLDIR/include
+
+./run_tests.sh
