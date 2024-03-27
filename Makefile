@@ -4,11 +4,11 @@ CXX = g++
 # Specify the -fpic flag
 CXXFLAGS += -fpic
 
-# Additional LDFLAGS for znzlib library
-WARPFNS_LDFLAGS = -L/home/ubuntu/flirt/warpfns  -L/home/ubuntu/flirt/meshclass -L/home/ubuntu/flirt/basisfield -L/home/ubuntu/flirt/miscmaths -lfsl-warpfns -lfsl-meshclass -lfsl-basisfield -lfsl-miscmaths
+# Additional LDFLAGS for WARPFNS library
+WARPFNS_LDFLAGS = -L/path/to/your/warpfns/library  -L/path/to/your/meshclass/library -L/path/to/your/basisfield/library -L/path/to/your/miscmaths/library -lfsl-warpfns -lfsl-meshclass -lfsl-basisfield -lfsl-miscmaths
 
 # Additional LDFLAGS for znzlib library
-ZNZLIB_LDFLAGS = -L/home/ubuntu/flirt/znzlib -lfsl-znz
+ZNZLIB_LDFLAGS = -L/path/to/your/znznlib/library -lfsl-znz
 
 # Define source files
 SRCS = applyxfm4D.cc avscale.cc convert_xfm.cc flirt.cc img2imgcoord.cc img2stdcoord.cc makerot.cc midtrans.cc pointflirt.cc rmsdiff.cc std2imgcoord.cc
