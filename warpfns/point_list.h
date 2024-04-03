@@ -10,7 +10,7 @@
 #define point_list_h
 
 #include <string>
-#include </home/ubuntu/flirt/warpfns/armawrap/newmat.h>
+#include </home/ubuntu/FSL-Flirt/warpfns/armawrap/newmat.h>
 
 namespace NEWIMAGE {
 

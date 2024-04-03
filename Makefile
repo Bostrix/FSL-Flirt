@@ -5,10 +5,10 @@ CXX = g++
 CXXFLAGS += -fpic
 
 # Additional LDFLAGS for WARPFNS library
-WARPFNS_LDFLAGS = -L/path/to/your/warpfns/library  -L/path/to/your/meshclass/library -L/path/to/your/basisfield/library -L/path/to/your/miscmaths/library -lfsl-warpfns -lfsl-meshclass -lfsl-basisfield -lfsl-miscmaths
+WARPFNS_LDFLAGS = -L${HOME}/FSL-Flirt/warpfns  -L${HOME}/FSL-Flirt/meshclass -L${HOME}/FSL-Flirt/basisfield -L${HOME}/FSL-Flirt/miscmaths -lfsl-warpfns -lfsl-meshclass -lfsl-basisfield -lfsl-miscmaths
 
 # Additional LDFLAGS for znzlib library
-ZNZLIB_LDFLAGS = -L/path/to/your/znznlib/library -lfsl-znz
+ZNZLIB_LDFLAGS = -L${HOME}/FSL-Flirt/znzlib -lfsl-znz
 
 # Define source files
 SRCS = applyxfm4D.cc avscale.cc convert_xfm.cc flirt.cc img2imgcoord.cc img2stdcoord.cc makerot.cc midtrans.cc pointflirt.cc rmsdiff.cc std2imgcoord.cc
@@ -17,7 +17,7 @@ SRCS = applyxfm4D.cc avscale.cc convert_xfm.cc flirt.cc img2imgcoord.cc img2stdc
 OBJS = $(SRCS:.cc=.o)
 
 # Define library source files and directories
-LIB_DIRS = warpfns basisfield meshclass miscmaths newimage NewNifti utils cprob znzlib
+LIB_DIRS = warpfns basisfield miscmaths newimage NewNifti utils cprob znzlib meshclass
 LIB_SRCS = $(foreach dir,$(LIB_DIRS),$(wildcard $(dir)/*.cc))
 LIB_OBJS = $(LIB_SRCS:.cc=.o)
 
