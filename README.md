@@ -37,7 +37,7 @@ After completing these steps, you should have all the necessary dependencies ins
 To compile FLIRT, follow these steps:
 
 - Ensure correct path in Makefile:
- After installing the necessary tools, verify correct path in the makefile to include additional LDFLAGS for the required libraries. For instance, if utilizing the warpfns library, basisfield library, meshclass library, miscmaths library, and zlib, ensure that the correct path is present in the makefile.
+ After installing the necessary tools, verify correct path in the makefile to include additional LDFLAGS for the required libraries. For instance, if utilizing the warpfns library, basisfield library, meshclass library, miscmaths library, and znzlib, ensure that the correct path is present in the makefile.
 Make sure `$(WARPFNS_LDFLAGS)`,`$(ZNZLIB_LDFLAGS)` are included in the compile step of the makefile.
 
 - Confirm that the file `point_list.h` within the warpfns library accurately includes the path to `armawrap/newmat.h`.
