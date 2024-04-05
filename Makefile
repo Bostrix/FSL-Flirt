@@ -77,4 +77,4 @@ libraries:
 
 # Clean rule
 clean:
-	rm -f flirt $(OBJS) $(LIB_OBJS) $(shell find . -type f \( -name "*.o" -o -name "*.so" \))
+	rm -f flirt applyxfm4D avscale convert_xfm img2imgcoord img2stdcoord makerot midtrans pointflirt rmsdiff std2imgcoord $(OBJS) $(LIB_OBJS) $(shell find . -type f \( -name "*.o" -o -name "*.so" \))
