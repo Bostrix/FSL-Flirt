@@ -3,10 +3,15 @@
 ## Introduction
 Welcome to FLIRT, a robust and accurate tool for linear (affine) intra- and inter-modal brain image registration. This guide will walk you through the process of compiling the FLIRT tool and utilizing its functionalities for image registration tasks.
 
+For more information about FLIRT and related tools, visit the FMRIB Software Library (FSL) website: [FSL Git Repository](https://git.fmrib.ox.ac.uk/fsl)
+You can also find additional resources and documentation on FLIRT on the FSL wiki page: [FLIRT Documentation](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT).
+
+Let's dive into the compilation and usage of FLIRT!
+
 ## Clone the Repository
 Begin by cloning the project repository from GitHub onto your local machine. You can do this by running the following command in your terminal or command prompt:
 ```bash
-https://github.com/Bostrix/FSL-Flirt.git
+git clone https://github.com/Bostrix/FSL-Flirt.git
 ```
 This command will create a local copy of the project in a directory named "FSL-Flirt".
 
@@ -15,30 +20,32 @@ Change your current directory to the newly cloned project directory using the fo
 ```bash
 cd FSL-Flirt
 ```
-## Compilation
-To compile FLIRT, follow these steps:
-- Install Required Libraries:
-Ensure that all necessary libraries are installed on your system. Use the following commands to install dependencies:
+## Installing Dependencies
+To install the necessary dependencies for compiling and building the project, follow these steps:
 ```bash
+sudo apt-get update
+sudo apt install g++
+sudo apt install make
 sudo apt-get install libblas-dev libblas3
 sudo apt-get install liblapack-dev liblapack3
 sudo apt-get install zlib1g zlib1g-dev
+sudo apt-get install libboost-all-dev
 ```
+After completing these steps, you should have all the necessary dependencies installed on your system to use FLIRT.
 
-- Modify Makefile:
- After installing the necessary tools, modify the makefile to include additional LDFLAGS for the required libraries. For example, if using warfns library,basisfield library,meshclass library,miscmaths library and zlib, add the following line to the makefile:
-```bash
-  WARPFNS_LDFLAGS = -L/path/to/your/warpfns/library  -L/path/to/your/meshclass/library -L/path/to/your/basisfield/library -L/path/to/your/miscmaths/library -lfsl-warpfns -lfsl-meshclass -lfsl-basisfield -lfsl-miscmaths
-  ZNZLIB_LDFLAGS = -L/path/to/your/znzlib/directory -lfsl-znz
-```
-  Replace `Path to your library` with the actual path to your directories. Make sure you added `$(WARPFNS_LDFLAGS)`,`$(ZNZLIB_LDFLAGS)` in the compile step of the makefile.
+## Compilation
+To compile FLIRT, follow these steps:
+
+- Ensure correct path in Makefile:
+ After installing the necessary tools, verify correct path in the makefile to include additional LDFLAGS for the required libraries. For instance, if utilizing the warpfns library, basisfield library, meshclass library, miscmaths library, and znzlib, ensure that the correct path is present in the makefile.
+Make sure `$(WARPFNS_LDFLAGS)`,`$(ZNZLIB_LDFLAGS)` are included in the compile step of the makefile.
+
+- Confirm that the file `point_list.h` within the warpfns library accurately includes the path to `armawrap/newmat.h`.
   
-- Modify Makefile of meshclass:
- modify the makefile of meshclass to include additional LDFLAGS for the required libraries. you are using newimage,miscmaths,NewNifti,cprob,znzlib,utils libraries as LDFLAGS variable in meshclass Makefile. Replace `Path to your appropriate library` with the actual path to your directories.
-```bash
-LDFLAGS += -L/path/to/your/newimage/directory -L/path/to/your/miscmaths/directory -L/path/to/your/NewNifti/directory -L/path/to/your/cprob/directory -L/path/to/your/znzlib/directory -L/path/to/your/utils/directory
-```
-Once the modifications have been saved, you may use the following command in your terminal to rebuild the mesh class separately:
+- Verify the accurate paths in meshclass's Makefile:
+verify the correct path in the makefile of meshclass to include additional LDFLAGS for the required libraries. For instance, if utilizing the newimage,miscmaths,NewNifti,cprob,znzlib,utils libraries as LDFLAGS variable in meshclass makefile,ensure that the correct path is present in the makefile.
+
+Once the necessary adjustments have been confirmed, you can utilize the following command in your terminal to rebuild the mesh class separately:
 ```bash
 make
 ```
