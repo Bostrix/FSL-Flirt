@@ -42,8 +42,7 @@ Make sure `$(WARPFNS_LDFLAGS)`,`$(ZNZLIB_LDFLAGS)` are included in the compile s
 
 - Confirm that the file `point_list.h` within the warpfns library accurately includes the path to `armawrap/newmat.h`.
   
-- Verify the accurate paths in meshclass's Makefile:
-verify the correct path in the makefile of meshclass to include additional LDFLAGS for the required libraries. For instance, if utilizing the newimage,miscmaths,NewNifti,cprob,znzlib,utils libraries as LDFLAGS variable in meshclass makefile,ensure that the correct path is present in the makefile.
+- Verify the accurate paths in meshclass's Makefile:Ensure the correct linker paths for the newimage, miscmaths, NewNifti, znzlib, cprob and utils libraries are included.
 
 - Compile Source Code:
 Execute the appropriate compile command to build the FLIRT tool. For example:
