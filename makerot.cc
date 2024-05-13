@@ -17,6 +17,7 @@
 #include "newimage/newimageall.h"
 #include "miscmaths/miscmaths.h"
 
+
 using namespace std;
 using namespace Utilities;
 using namespace NEWMAT;
@@ -37,7 +38,7 @@ string examples="makerot [options] --theta=angle";
 // Note that they must also be included in the main() function or they
 //  will not be active.
 
-extern Option<bool> verbose(string("-v,--verbose"), false,
+Option<bool> verbose(string("-v,--verbose"), false,
 		     string("switch on diagnostic messages"),
 		     false, no_argument);
 Option<bool> help(string("-h,--help"), false,

@@ -26,8 +26,8 @@ using namespace NEWIMAGE;
 // The two strings below specify the title and example usage that is
 //  printed out as the help or usage message
 
-static string title="midtrans \nCopyright(c) 2010, University of Oxford (Mark Jenkinson)";
-static string examples="midtrans [options] transform1 transform2 ... transformN\n  e.g. midtrans -o temp2mid.mat A2temp.mat B2temp.mat C2temp.mat\n       midtrans -o C2mid.mat A2C.mat B2C.mat ident.mat";
+string title="midtrans \nCopyright(c) 2010, University of Oxford (Mark Jenkinson)";
+string examples="midtrans [options] transform1 transform2 ... transformN\n  e.g. midtrans -o temp2mid.mat A2temp.mat B2temp.mat C2temp.mat\n       midtrans -o C2mid.mat A2C.mat B2C.mat ident.mat";
 
 // Each (global) object below specificies as option and can be accessed
 //  anywhere in this file (since they are global).  The order of the
@@ -36,13 +36,13 @@ static string examples="midtrans [options] transform1 transform2 ... transformN\
 // Note that they must also be included in the main() function or they
 //  will not be active.
 
-static Option<bool> verbose(string("-v,--verbose"), false,
+Option<bool> verbose(string("-v,--verbose"), false,
 		     string("switch on diagnostic messages"),
 		     false, no_argument);
-static Option<bool> help(string("-h,--help"), false,
+Option<bool> help(string("-h,--help"), false,
 		  string("display this message"),
 		  false, no_argument);
-static Option<bool> debug(string("--debug"), false,
+Option<bool> debug(string("--debug"), false,
 		     string("switch on debugging output"),
 		     false, no_argument);
 Option<string> templte(string("--template"), string(""),
@@ -51,10 +51,10 @@ Option<string> templte(string("--template"), string(""),
 Option<string> separateouts(string("--separate"), string(""),
 		  string("basename for output of separate matrices (final name includes a number; e.g. img2mid0001.mat)"),
 		  false, requires_argument);
-static Option<string> outname(string("-o,--out"), string(""),
+Option<string> outname(string("-o,--out"), string(""),
 		  string("output filename for matrix"),
 		  false, requires_argument);
-static int nonoptarg;
+int nonoptarg;
 
 ////////////////////////////////////////////////////////////////////////////
 

@@ -10,6 +10,7 @@
 #include <iostream>
 #include <fstream>
 #include <unistd.h>
+
 #ifndef EXPOSE_TREACHEROUS
 #define EXPOSE_TREACHEROUS
 #endif
@@ -19,6 +20,7 @@
 #include "newimage/newimageall.h"
 #include "warpfns/warpfns.h"
 #include "warpfns/fnirt_file_reader.h"
+
 using namespace std;
 using namespace MISCMATHS;
 using namespace NEWMAT;

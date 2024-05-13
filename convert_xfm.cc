@@ -41,7 +41,7 @@ public:
   ~globaloptions() {};
 };
 
-static globaloptions globalopts;
+globaloptions globalopts;
 
 
 globaloptions::globaloptions()

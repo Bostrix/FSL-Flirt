@@ -14,6 +14,7 @@
 #include "armawrap/newmat.h"
 #include "miscmaths/miscmaths.h"
 #include "newimage/newimageall.h"
+
 using namespace std;
 using namespace MISCMATHS;
 using namespace NEWMAT;

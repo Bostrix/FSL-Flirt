@@ -10,6 +10,7 @@
 #include "miscmaths/miscmaths.h"
 #include "utils/options.h"
 #include "newimage/newimageall.h"
+
 using namespace std;
 using namespace Utilities;
 using namespace NEWMAT;
@@ -20,13 +21,13 @@ using namespace NEWIMAGE;
 
 // COMMAND LINE OPTIONS
 
-static string title="pointflirt \nCopyright(c) 2001, University of Oxford (Mark Jenkinson)";
-static string examples="pointflirt -i <invol coords>  -r <refvol coords> -o <output matrix>\npointflirt -i <invol coords>  -r <refvol coords> -o <output matrix> --vox --invol=<input vol> --refvol=<ref vol>";
+string title="pointflirt \nCopyright(c) 2001, University of Oxford (Mark Jenkinson)";
+string examples="pointflirt -i <invol coords>  -r <refvol coords> -o <output matrix>\npointflirt -i <invol coords>  -r <refvol coords> -o <output matrix> --vox --invol=<input vol> --refvol=<ref vol>";
 
-static Option<bool> verbose(string("-v,--verbose"), false,
+Option<bool> verbose(string("-v,--verbose"), false,
 		     string("switch on diagnostic messages"),
 		     false, no_argument);
-static Option<bool> help(string("-h,--help"), false,
+Option<bool> help(string("-h,--help"), false,
 		  string("display this message"),
 		  false, no_argument);
 Option<bool> voxcoord(string("--vox"), false,

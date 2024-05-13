@@ -21,6 +21,7 @@
 #include "newimage/newimageall.h"
 #include "warpfns/warpfns.h"
 #include "warpfns/fnirt_file_reader.h"
+
 using namespace std;
 using namespace NiftiIO;
 using namespace MISCMATHS;
@@ -44,7 +45,8 @@ public:
   globaloptions();
   ~globaloptions() {};
 };
-static  globaloptions globalopts;
+
+globaloptions globalopts;
 
 
 globaloptions::globaloptions()
